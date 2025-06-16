@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Background color of the footer -->
+    <solid android:color="#FFFFFF" /> <!-- You can change to any hex or @color -->
+
+    <!-- Optional rounded corners -->
+    <corners android:topLeftRadius="16dp"
+        android:topRightRadius="16dp" />
+
+    <!-- Optional border/stroke -->
+    <stroke
+        android:width="1dp"
+        android:color="#DDDDDD" />
+
+    <!-- Optional shadow padding (won’t give real elevation) -->
+    <padding
+        android:top="4dp"
+        android:bottom="4dp" />
+</shape>

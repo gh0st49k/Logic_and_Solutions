@@ -1,0 +1,112 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg1"
+    tools:context=".Homeactivity">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/img_1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:background="@drawable/stroketextview"
+            android:textColor="#1A237E"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!-- Fixed ViewFlipper (outside ScrollView) -->
+
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+            <TextView
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="60dp"
+                android:gravity="center"
+                android:textSize="30dp"
+                android:text="Address : Dombivli , India"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                ></TextView>
+      <TextView
+          android:textStyle="bold"
+          android:layout_marginRight="50dp"
+          android:layout_marginLeft="60dp"
+          android:gravity="center"
+          android:textSize="20sp"
+          android:text="Address : Dombivli , India"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+></TextView>
+
+            <TextView
+                android:layout_width="324dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="50dp"
+                android:gravity="center"
+                android:text="gaurav.ailsinghanivesp@gmail.com"
+                android:textSize="20dp"
+                android:textStyle="bold">
+                >
+            </TextView>
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="60dp"
+                android:gravity="center"
+                android:textSize="20dp"
+                android:text="Mobile : 9168788000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+                ></TextView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Footer -->
+    <include layout="@layout/footernav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,261 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg1"
+    tools:context=".Homeactivity">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/img_1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"/>
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome!"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:background="@drawable/stroketextview"
+            android:textColor="#1A237E"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center_vertical"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <!-- Fixed ViewFlipper (outside ScrollView) -->
+    <ViewFlipper
+        android:id="@+id/homeSlidder"
+        android:inAnimation="@android:anim/slide_in_left"
+        android:outAnimation="@android:anim/slide_out_right"
+        android:autoStart="true"
+        android:flipInterval="10000"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_marginBottom="8dp">
+
+        <ImageView
+            android:src="@drawable/banner1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/banner2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/banner3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <ImageView
+            android:src="@drawable/banner4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+    </ViewFlipper>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- Grid Menu Section -->
+            <GridLayout
+                android:padding="16dp"
+                android:rowCount="2"
+                android:columnCount="2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/aboutus"
+                        android:layout_width="80dp"
+                        android:layout_height="85dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/aboutus" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="About us"
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/contactus"
+
+                        android:src="@drawable/contact"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Contact us"
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/feedback"
+
+                        android:src="@drawable/feedback"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Feedback"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/gallery"
+
+                        android:src="@drawable/gallery"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Gallery"
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/socialmedia"
+
+                        android:src="@drawable/socials"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Social Media "
+                        android:textAlignment="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/volunteer"
+
+                        android:src="@drawable/charity"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="Volunteer"
+                        android:textAlignment="center" />
+                </LinearLayout>
+
+
+                <!-- Add more tiles like this inside GridLayout -->
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Footer -->
+
+    <include layout="@layout/footernav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+
+</LinearLayout>
