@@ -1,0 +1,152 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg1"
+    tools:context=".Homeactivity">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/img_1"
+            android:layout_marginEnd="16dp" />
+
+        <TextView
+            android:id="@+id/welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We'd love your Feedback"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:background="@drawable/stroketextview"
+            android:textColor="#1A237E"
+            android:fontFamily="sans-serif-medium" />
+    </LinearLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Info Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Address : 📌 SHOP NO 1, Sai Palace OPP CENTURY RAYON HOSPITAL, Ulhasnagar, Maharashtra 421103"
+                android:textColor="#FF0000"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/feedbackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📧 Email: sohamfoundation2015@gmail.com\n📞 Mobile: +91 07738356103, +91 09763026278\n🌐 Website: www.sohamfoundationngo.org"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
+
+
+            <!-- Feedback Header -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📝 Submit Feedback"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#013106"
+                android:gravity="center"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Feedback Form -->
+            <EditText
+                android:id="@+id/etname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Name"
+                android:background="@drawable/context_et"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etmobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:background="@drawable/context_et"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="12dp"/>
+
+            <EditText
+                android:id="@+id/etconcern"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Your Feedback / Concern"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:background="@drawable/context_et"
+                android:padding="12dp"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/btnAttach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Attach Screenshot or File"
+                android:backgroundTint="#FF9800"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="12dp"
+                android:elevation="4dp"/>
+            <Button
+                android:id="@+id/etBtnsubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Feedback"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#318A66"
+                android:padding="12dp"
+                android:textStyle="bold"
+                android:elevation="4dp"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Footer Navigation -->
+    <include layout="@layout/footernav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+</LinearLayout>

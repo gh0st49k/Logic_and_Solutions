@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_bg1"
+    android:orientation="vertical"
+    android:padding="0dp">
+
+    <!-- Title -->
+    <TextView
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:text="Gallery"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- GridView for Gallery -->
+    <GridView
+        android:id="@+id/galleryGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:numColumns="2"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:gravity="center"
+        android:layout_weight="1" />
+
+    <!-- Footer Navigation -->
+    <include
+        layout="@layout/footernav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+</LinearLayout>

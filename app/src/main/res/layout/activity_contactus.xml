@@ -21,7 +21,7 @@
             android:layout_height="60dp"
             android:src="@drawable/img_1"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="16dp" />
 
         <TextView
             android:id="@+id/welcome"
@@ -34,11 +34,8 @@
             android:textColor="#1A237E"
             android:fontFamily="sans-serif-medium"
             android:gravity="center_vertical"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
-
-    <!-- Fixed ViewFlipper (outside ScrollView) -->
-
 
     <!-- Scrollable Content -->
     <ScrollView
@@ -51,62 +48,107 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="12dp">
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Address : 📌 SHOP NO 1, Sai Palace OPP CENTURY RAYON HOSPITAL, Ulhasnagar, Maharashtra 421103"
                 android:textColor="#FF0000"
                 android:textStyle="bold"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="60dp"
                 android:gravity="center"
-                android:textSize="30dp"
-                android:text="Address : Dombivli , India"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:textSize="20dp" />
 
-                ></TextView>
-      <TextView
-          android:textStyle="bold"
-          android:layout_marginRight="50dp"
-          android:layout_marginLeft="60dp"
-          android:gravity="center"
-          android:textSize="20sp"
-          android:text="Address : Dombivli , India"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-></TextView>
-
-            <TextView
-                android:layout_width="324dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="60dp"
-                android:layout_marginRight="50dp"
-                android:gravity="center"
-                android:text="gaurav.ailsinghanivesp@gmail.com"
-                android:textSize="20dp"
-                android:textStyle="bold">
-                >
-            </TextView>
             <TextView
                 android:textStyle="bold"
-                android:layout_marginRight="50dp"
-                android:layout_marginLeft="60dp"
-                android:gravity="center"
-                android:textSize="20dp"
-                android:text="Mobile : 9168788000"
+                android:id="@+id/contactDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                >
-                ></TextView>
+                android:text="Email: sohamfoundation2015@gmail.com\nPhone: +91 77383 56103\nWebsite: www.sohamfoundationngo.org"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginBottom="20dp" />
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Query"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="#FF0000"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="90dp"
+                android:layout_marginRight="90dp" />
+
+            <!-- Form Inputs -->
+            <EditText
+                android:id="@+id/etname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Name"
+                android:padding="12dp"
+                android:background="@drawable/context_et"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp" />
+
+            <EditText
+                android:id="@+id/etmobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:padding="12dp"
+                android:background="@drawable/context_et"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp" />
+
+            <EditText
+                android:id="@+id/etconcern"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:hint="Enter your Concern"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:padding="12dp"
+                android:background="@drawable/context_et"
+                android:textColor="#000000"
+                android:textColorHint="@color/black"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp" />
+
+            <!-- Submit Button -->
+            <Button
+                android:id="@+id/etBtnsubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:padding="12dp"
+                android:elevation="4dp"
+                android:backgroundTint="#318A66"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp" />
         </LinearLayout>
     </ScrollView>
 
     <!-- Fixed Footer -->
-    <include layout="@layout/footernav"
+    <include
+        layout="@layout/footernav"
         android:layout_width="match_parent"
         android:layout_height="68dp" />
-
-
-
-
 </LinearLayout>

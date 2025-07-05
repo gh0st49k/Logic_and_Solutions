@@ -1,0 +1,26 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Yellow gradient background -->
+    <item>
+        <shape>
+            <corners android:radius="20dp" />
+            <gradient
+                android:startColor="#FFF176" >
+
+            </gradient> <!-- Light Yellow -->
+
+        </shape>
+    </item>
+
+    <!-- Black outline -->
+    <item android:left="1dp" android:right="1dp" android:top="1dp" android:bottom="1dp">
+        <shape>
+            <corners android:radius="20dp" />
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="2dp"
+                android:color="#000000" />
+        </shape>
+    </item>
+
+</layer-list>

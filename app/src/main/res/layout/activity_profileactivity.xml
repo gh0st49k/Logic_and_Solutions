@@ -1,13 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/gradient_bg1"
-
+    android:padding="20dp"
     tools:context=".Profileactivity">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="10dp">
+
+        <!-- Profile Image -->
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/img"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Profile"
+            android:background="@drawable/stroketextview"
+            android:padding="10dp" />
+
+        <!-- Username -->
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome, User!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1A237E"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Email Display -->
+        <TextView
+            android:layout_gravity="left"
+            android:id="@+id/usrname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name :"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp" />
+        <TextView
+            android:layout_gravity="left"
+            android:id="@+id/usremail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Email :"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp" />
+        <TextView
+            android:layout_gravity="left"
+            android:id="@+id/phno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Phone : "
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp" />
+
+        <!-- New Password -->
+        <EditText
+            android:id="@+id/etNewPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter New Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@drawable/context_et"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Confirm Password -->
+        <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm New Password"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@drawable/context_et"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Reset Password Button -->
+        <Button
+            android:id="@+id/btnResetPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reset Password"
+            android:textStyle="bold"
+            android:backgroundTint="#FF5722"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="30dp" />
+        <ImageView
+            android:id="@+id/usrlogout"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/logout">
+
+
+        </ImageView>
+        <TextView
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+</ScrollView>

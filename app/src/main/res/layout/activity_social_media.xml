@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_bg1">
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Follow Us On Social Media"
+                android:textColor="#1A237E"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Instagram Block -->
+            <ImageView
+                android:id="@+id/instagram"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_instagram"
+                android:layout_marginBottom="8dp" />
+            <TextView
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="sohamfoundation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dashinsta"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Facebook Block -->
+            <ImageView
+                android:id="@+id/facebook"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_facebook"
+                android:layout_marginBottom="8dp" />
+            <TextView
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="www.sohamfoundations.org"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dashfacebook"
+                android:layout_marginBottom="24dp" />
+
+
+            <!-- Twitter Block -->
+            <ImageView
+                android:id="@+id/twitter"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_twitter"
+                android:layout_marginBottom="8dp" />
+            <TextView
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="ngo_soham "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dashx"
+                android:layout_marginBottom="24dp" />
+
+            <!-- YouTube Block -->
+            <ImageView
+                android:id="@+id/youtube"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_youtube"
+                android:layout_marginBottom="8dp" />
+            <TextView
+                android:textStyle="bold|italic"
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:text="Soham Foundation "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dashyt"
+                android:layout_marginBottom="24dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer Navigation -->
+    <include
+        layout="@layout/footernav"
+        android:layout_width="match_parent"
+        android:layout_height="68dp" />
+</LinearLayout>

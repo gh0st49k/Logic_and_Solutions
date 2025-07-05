@@ -11,11 +11,10 @@
     android:background="@drawable/gradient_bg1" >
 
     <ImageView
-
+        android:id="@+id/welcomelogo"
         android:layout_width="285dp"
         android:layout_height="272dp"
         android:src="@drawable/img_1"
-
         android:layout_marginLeft="60dp"
         android:layout_marginVertical="200dp"
         android:layout_marginBottom="200dp">

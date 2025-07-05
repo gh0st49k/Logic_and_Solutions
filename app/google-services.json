@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1069159596098",
+    "project_id": "logic-and-solutions",
+    "storage_bucket": "logic-and-solutions.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069159596098:android:48df605f81c62fb8faaddb",
+        "android_client_info": {
+          "package_name": "com.example.logicandsolutions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD8tL_DCIuw4A9zYLozUNjr_AnrekGZZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
