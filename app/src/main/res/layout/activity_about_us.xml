@@ -17,7 +17,7 @@
             android:orientation="vertical"
             android:gravity="center_horizontal">
 
-            <!-- Foundation Logo -->
+            <!-- Logo -->
             <ImageView
                 android:id="@+id/logoImage"
                 android:layout_width="120dp"
@@ -26,7 +26,7 @@
                 android:layout_marginBottom="16dp"
                 android:contentDescription="Soham Foundation Logo" />
 
-            <!-- Foundation Name -->
+            <!-- Name -->
             <TextView
                 android:id="@+id/foundationName"
                 android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
                 android:text="Soham Foundation"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                android:textColor="#1E3A8A"
+                android:textColor="#FFFFFF"
                 android:layout_marginBottom="10dp" />
 
             <!-- Address -->
@@ -45,7 +45,7 @@
                 android:text="Shop No 1, Sai Palace,\nOpp. Century Rayon Hospital,\nUlhasnagar, Maharashtra - 421103"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="#555555"
+                android:textColor="#E0E0E0"
                 android:gravity="center"
                 android:layout_marginBottom="18dp" />
 
@@ -54,13 +54,12 @@
                 android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Soham Foundation  is a voluntary organization by the peoples for the peoples which is dedicated for  the overall development of entire society providing support for education to depressed and needy children’s , provide health care to the underprivileged portion of the society.
-Soham Foundation committed for betterment of the life of children in remote and unattended part of societies. It is our observation; there is lots of work needs to be done in the outskirts of the cities, i.e.in Rural area small towns, Adivashi pada’s"
+                android:text="Soham Foundation is a voluntary organization by the people for the people, dedicated to the overall development of society. We provide educational support to underprivileged children and healthcare access to marginalized communities.\n\nWe aim to uplift rural, tribal, and overlooked populations with sustainable initiatives for long-term change."
                 android:textSize="16sp"
-                android:textColor="#444444"
+                android:textColor="#F1F1F1"
                 android:lineSpacingExtra="5dp"
                 android:layout_marginBottom="16dp"
-                android:textStyle="bold" />
+                android:textStyle="normal" />
 
             <!-- Core Values -->
             <TextView
@@ -70,16 +69,16 @@ Soham Foundation committed for betterment of the life of children in remote and 
                 android:text="Our Core Values"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937"
+                android:textColor="#FFEB3B"
                 android:layout_marginBottom="8dp" />
 
             <TextView
                 android:id="@+id/coreValues"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="• Compassionate Service\n• Inclusive Growth\n• Community Empowerment\n• Transparency &amp;  Trust\n• Sustainable Impact"
+                android:text="• Compassionate Service\n• Inclusive Growth\n• Community Empowerment\n• Transparency and Trust\n• Sustainable Impact"
                 android:textSize="15sp"
-                android:textColor="#07FD00"
+                android:textColor="#B2FF59"
                 android:layout_marginBottom="18dp" />
 
             <!-- Call to Action -->
@@ -87,14 +86,14 @@ Soham Foundation committed for betterment of the life of children in remote and 
                 android:id="@+id/cta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Together, we can create hope and opportunities. Join us in building a better tomorrow."
+                android:text="Together, we can create hope and opportunities.\nJoin us in building a better tomorrow."
                 android:textSize="15sp"
                 android:textStyle="italic"
                 android:textColor="#FFFFFF"
                 android:gravity="center"
                 android:layout_marginBottom="20dp" />
 
-            <!-- Contact -->
+            <!-- Contact Title -->
             <TextView
                 android:id="@+id/contactTitle"
                 android:layout_width="wrap_content"
@@ -102,9 +101,10 @@ Soham Foundation committed for betterment of the life of children in remote and 
                 android:text="Contact Us"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#1F2937"
+                android:textColor="#FFEB3B"
                 android:layout_marginBottom="6dp" />
 
+            <!-- Contact Info -->
             <TextView
                 android:id="@+id/contactDetails"
                 android:layout_width="wrap_content"
@@ -113,9 +113,11 @@ Soham Foundation committed for betterment of the life of children in remote and 
                 android:autoLink="all"
                 android:linksClickable="true"
                 android:textSize="15sp"
-                android:textColor="#07FD00"
+                android:textColor="@color/black"
                 android:gravity="center"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                android:background="@color/white"/>
+
         </LinearLayout>
     </ScrollView>
 
@@ -123,5 +125,6 @@ Soham Foundation committed for betterment of the life of children in remote and 
     <include
         layout="@layout/footernav"
         android:layout_width="match_parent"
-        android:layout_height="68dp" />
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp" />
 </LinearLayout>

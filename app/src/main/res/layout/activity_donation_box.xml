@@ -1,4 +1,4 @@
-  <LinearLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -37,9 +37,6 @@
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
-    <!-- Fixed ViewFlipper (outside ScrollView) -->
-
-
     <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
@@ -59,12 +56,9 @@
                 android:layout_gravity="center"
                 android:text="Donation Box"
                 android:textColor="#FF0000"
-
                 android:textSize="30sp"
-                android:textStyle="bold">
-                >
+                android:textStyle="bold" />
 
-            </TextView>
             <TextView
                 android:layout_marginTop="12dp"
                 android:text="Select Amount Of Donation"
@@ -73,21 +67,29 @@
                 android:textColor="@color/black"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content" />
 
-            </TextView>
             <SeekBar
-
-                android:outlineSpotShadowColor="@color/black"
-                android:outlineAmbientShadowColor="@color/black"
                 android:layout_marginTop="15dp"
                 android:max="10000"
                 android:id="@+id/amountseekbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content" />
 
+            <EditText
+                android:id="@+id/amountInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Enter amount (max ₹10000)"
+                android:inputType="number"
+                android:maxLength="5"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:background="@drawable/context_et"
+                android:padding="10dp"
+                android:textSize="16sp" />
 
-            </SeekBar>
             <TextView
                 android:id="@+id/selectedAmount"
                 android:layout_marginTop="10dp"
@@ -97,18 +99,13 @@
                 android:text=" 0 ₹"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content" />
 
-            </TextView>
-            <!-- extra text here -->
             <EditText
                 android:id="@+id/messageInput"
-
                 android:textColorHint="@color/black"
-
                 android:textColor="@color/black"
                 android:layout_marginTop="12dp"
-
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter the cause or message for your donation"
@@ -118,7 +115,8 @@
                 android:inputType="textMultiLine"
                 android:minLines="3"
                 android:maxLines="5"
-                android:gravity="top|start"/>
+                android:gravity="top|start" />
+
             <Button
                 android:id="@+id/donationbtn"
                 android:textColor="@android:color/white"
@@ -128,25 +126,19 @@
                 android:textStyle="bold"
                 android:text="Donate Now"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                ></Button>
+                android:layout_height="wrap_content" />
+
             <TextView
                 android:textColor="@color/white"
                 android:textSize="10dp"
-
                 android:text="All donations made to Soham Foundation receive exemption\nunder 80G of Indian Income Tax laws."
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center">
-
-            </TextView>
-
-
-
+                android:layout_gravity="center" />
 
         </LinearLayout>
     </ScrollView>
+
     <Button
         android:id="@+id/donationhistory"
         android:textStyle="bold"
@@ -156,13 +148,13 @@
         android:layout_marginLeft="120dp"
         android:text="Donation History"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" />
 
-    </Button>
     <!-- Fixed Footer -->
-    <include layout="@layout/footernav"
+    <include
+        layout="@layout/footernav"
         android:layout_width="match_parent"
-        android:layout_height="68dp" />
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp" />
 
 </LinearLayout>
-

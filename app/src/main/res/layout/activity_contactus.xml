@@ -53,14 +53,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" Address : 📌 SHOP NO 1, Sai Palace OPP CENTURY RAYON HOSPITAL, Ulhasnagar, Maharashtra 421103"
-                android:textColor="#FF0000"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 android:layout_marginRight="50dp"
                 android:layout_marginLeft="60dp"
                 android:gravity="center"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:background="#318A66" >
+
+            </TextView> <!-- 🔹 Dark Blue Background -->
+                  <!-- 🔸 So that text doesn’t stick to edges -->
+
+
 
             <TextView
+
+                android:layout_gravity="center"
                 android:textStyle="bold"
                 android:id="@+id/contactDetails"
                 android:layout_width="wrap_content"
@@ -71,7 +79,10 @@
                 android:textSize="15sp"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                android:background="@color/white"
+                android:layout_marginTop="16dp"
+            />
 
 
             <TextView
@@ -150,5 +161,7 @@
     <include
         layout="@layout/footernav"
         android:layout_width="match_parent"
-        android:layout_height="68dp" />
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp" />
+
 </LinearLayout>

@@ -1,41 +1,40 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_bg1"
-    tools:context=".Homeactivity">
+    tools:context=".HelpActivity">
 
-    <!-- Header -->
+    <!-- Header Layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="12dp"
-        android:gravity="center_vertical">
+        android:padding="12dp">
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/img_1"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:layout_gravity="center_vertical" />
 
         <TextView
             android:id="@+id/welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="We'd love your Feedback"
+            android:text="Need Help?"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:background="@drawable/stroketextview"
             android:textColor="#1A237E"
-            android:fontFamily="sans-serif-medium" />
+            android:background="@drawable/stroketextview"
+            android:layout_gravity="center_vertical" />
     </LinearLayout>
 
-    <!-- Scrollable Content -->
+    <!-- Scroll Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -47,109 +46,109 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Info Section -->
+            <!-- Address and Contact -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Address : 📌 SHOP NO 1, Sai Palace OPP CENTURY RAYON HOSPITAL, Ulhasnagar, Maharashtra 421103"
-                android:textColor="#FF0000"
-                android:textSize="18sp"
+                android:background="#318A66"
+                android:text="📌 Address: SHOP NO 1, Sai Palace OPP CENTURY RAYON HOSPITAL, Ulhasnagar, Maharashtra 421103"
+                android:textColor="#FFFFFF"
+                android:padding="10dp"
                 android:textStyle="bold"
-                android:gravity="center_horizontal"
-                android:layout_marginBottom="8dp"/>
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp" />
 
             <TextView
-                android:id="@+id/feedbackText"
-                android:layout_width="wrap_content"
+                android:id="@+id/contactDetails"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="📧 Email: sohamfoundation2015@gmail.com\n📞 Mobile: +91 07738356103, +91 09763026278\n🌐 Website: www.sohamfoundationngo.org"
+                android:text="Email: sohamfoundation2015@gmail.com\nPhone: +91 77383 56103\nWebsite: www.sohamfoundationngo.org"
                 android:autoLink="all"
-                android:linksClickable="true"
-                android:textSize="15sp"
-                android:textStyle="bold"
                 android:textColor="#000000"
+                android:background="@android:color/white"
+                android:padding="10dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Help Query"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#0819EF"
                 android:gravity="center"
                 android:layout_marginBottom="20dp" />
 
-
-            <!-- Feedback Header -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📝 Submit Feedback"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#013106"
-                android:gravity="center"
-                android:layout_marginBottom="12dp"/>
-
-            <!-- Feedback Form -->
+            <!-- Name Input -->
             <EditText
-                android:id="@+id/etname"
+                android:id="@+id/etHelpName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your Name"
-                android:background="@drawable/context_et"
+                android:hint="Enter Name"
+
                 android:padding="12dp"
+                android:background="@drawable/context_et"
                 android:textColor="#000000"
                 android:textColorHint="@color/black"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp" />
 
+            <!-- Mobile Input -->
             <EditText
-                android:id="@+id/etmobile"
+                android:id="@+id/etHelpMobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mobile Number"
                 android:inputType="phone"
-                android:background="@drawable/context_et"
                 android:padding="12dp"
+                android:background="@drawable/context_et"
                 android:textColor="#000000"
                 android:textColorHint="@color/black"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp" />
 
+            <!-- Help Type Dropdown -->
+            <Spinner
+                
+                android:id="@+id/helpTypeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/context_et"
+                android:padding="10dp" />
+
+            <!-- Description / Concern -->
             <EditText
-                android:id="@+id/etconcern"
+                android:id="@+id/etHelpDescription"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:hint="Your Feedback / Concern"
+                android:hint="Please describe your request"
                 android:gravity="top"
                 android:inputType="textMultiLine"
-                android:background="@drawable/context_et"
                 android:padding="12dp"
+                android:background="@drawable/context_et"
                 android:textColor="#000000"
                 android:textColorHint="@color/black"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp" />
 
-            <!-- Submit Button -->
+            <!-- Submit -->
             <Button
-                android:id="@+id/btnAttach"
+                android:id="@+id/btnHelpSubmit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Attach Screenshot or File"
-                android:backgroundTint="#FF9800"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="12dp"
-                android:elevation="4dp"/>
-            <Button
-                android:id="@+id/etBtnsubmit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Submit Feedback"
+                android:text="Submit Help Request"
+                android:textStyle="bold"
                 android:textColor="@android:color/white"
                 android:backgroundTint="#318A66"
-                android:padding="12dp"
-                android:textStyle="bold"
-                android:elevation="4dp"/>
-
-
+                android:elevation="4dp"
+                android:padding="12dp" />
         </LinearLayout>
     </ScrollView>
 
-    <!-- Fixed Footer Navigation -->
+    <!-- Footer Navigation -->
     <include
         layout="@layout/footernav"
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginBottom="16dp" />
-
+        android:layout_marginBottom="12dp" />
 </LinearLayout>

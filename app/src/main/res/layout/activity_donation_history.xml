@@ -63,7 +63,10 @@
         android:padding="12dp" />
 
     <!-- Footer nav stays fixed below -->
-    <include layout="@layout/footernav"
+    <include
+        layout="@layout/footernav"
         android:layout_width="match_parent"
-        android:layout_height="68dp" />
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp" />
+
 </LinearLayout>

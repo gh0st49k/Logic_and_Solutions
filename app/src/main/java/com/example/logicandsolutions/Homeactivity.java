@@ -30,7 +30,7 @@ public class Homeactivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private ViewFlipper viewFlipper;
 
-    private ImageView donation, contactus, aboutus, feedback, gallery, volunteer, socialmedia , logouticon,developer,homeimg,profile;
+    private ImageView donation, contactus, aboutus, feedback, gallery, volunteer, socialmedia , logouticon,developer,homeimg,profile,help;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +59,12 @@ public class Homeactivity extends AppCompatActivity {
         donation = findViewById(R.id.donationbtnnav);
         contactus = findViewById(R.id.contactus);
         aboutus = findViewById(R.id.aboutus);
-        feedback = findViewById(R.id.feedback);
+
         gallery = findViewById(R.id.gallery);
         volunteer = findViewById(R.id.volunteer);
         socialmedia = findViewById(R.id.socialmedia);
         logouticon =findViewById(R.id.logout);
+        help = findViewById(R.id.help);
         logouticon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +113,7 @@ public class Homeactivity extends AppCompatActivity {
 
         contactus.setOnClickListener(v -> navigateWithSlide(ContactusActivity.class));
         aboutus.setOnClickListener(v -> navigateWithSlide(AboutUsActivity.class));
-        feedback.setOnClickListener(v -> navigateWithSlide(FeedbackActivity.class));
+        help.setOnClickListener(v -> navigateWithSlide(HelpActivity.class));
         gallery.setOnClickListener(v -> navigateWithSlide(com.example.logicandsolutions.GalleryActivity.class));
         volunteer.setOnClickListener(v -> navigateWithSlide(VolunteerActivity.class));
         socialmedia.setOnClickListener(v -> navigateWithSlide(SocialMediaActivity.class));
@@ -127,7 +128,7 @@ public class Homeactivity extends AppCompatActivity {
     private void runTileAnimations() {
         aboutus.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_aboutus));
         contactus.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_contactus));
-        feedback.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_feedback));
+        help.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_feedback));
         gallery.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_gallery));
         socialmedia.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_socialmedia));
         volunteer.startAnimation(AnimationUtils.loadAnimation(this, R.anim.fadein_volunteer));

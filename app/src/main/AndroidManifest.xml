@@ -15,6 +15,9 @@
         android:theme="@style/Theme.LogicAndSolutions"
         tools:targetApi="31">
         <activity
+            android:name=".HelpActivity"
+            android:exported="false" />
+        <activity
             android:name=".DeveloperInfo"
             android:exported="false" />
         <activity
@@ -24,7 +27,7 @@
             android:name=".VolunteerActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.logicandsolutions.GalleryActivity"
+            android:name=".GalleryActivity"
             android:exported="false" />
         <activity
             android:name=".FeedbackActivity"

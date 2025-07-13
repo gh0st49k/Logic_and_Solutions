@@ -39,5 +39,7 @@
     <include
         layout="@layout/footernav"
         android:layout_width="match_parent"
-        android:layout_height="68dp" />
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp" />
+
 </LinearLayout>

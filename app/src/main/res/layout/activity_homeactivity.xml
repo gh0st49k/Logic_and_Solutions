@@ -151,11 +151,11 @@
                     android:layout_margin="8dp">
 
                     <ImageView
-                        android:id="@+id/feedback"
+                        android:id="@+id/help"
 
-                        android:src="@drawable/feedback"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:src="@drawable/help"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
                         android:scaleType="centerCrop" />
 
                     <TextView
@@ -164,7 +164,7 @@
                         android:layout_marginTop="4dp"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:text="Feedback"
+                        android:text="How can we help?!"
                         android:textAlignment="center" />
                 </LinearLayout>
 
@@ -254,8 +254,11 @@
 
     <!-- Fixed Footer -->
 
-    <include layout="@layout/footernav"
+    <include
+        layout="@layout/footernav"
         android:layout_width="match_parent"
-        android:layout_height="68dp" />
+        android:layout_height="68dp"
+        android:layout_marginBottom="16dp" />
+
 
 </LinearLayout>
