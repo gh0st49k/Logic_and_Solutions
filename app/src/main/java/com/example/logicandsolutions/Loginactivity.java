@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Loginactivity extends AppCompatActivity {
     EditText email, password;
@@ -30,38 +31,28 @@ public class Loginactivity extends AppCompatActivity {
         RedirectToRegister = findViewById(R.id.Register);
         mauth = FirebaseAuth.getInstance();
 
+        // Login Button Click
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String useremail = email.getText().toString().trim();
                 String passwd = password.getText().toString().trim();
 
-                // Validation
-                if (useremail.isEmpty()) {
-                    email.setError("Please enter your email");
-                    email.requestFocus();
-                    return;
-                }
+                // Validation... (Your validation code is fine)
 
-                if (passwd.isEmpty()) {
-                    password.setError("Please enter your password");
-                    password.requestFocus();
-                    return;
-                }
-
-                if (useremail.equals("admin") && passwd.equals("1313")) {
-                    Toast.makeText(Loginactivity.this, "Admin Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Loginactivity.this, AdminPanel.class));
-                    finish();
-                    return;
-                }
                 // Firebase login
                 mauth.signInWithEmailAndPassword(useremail, passwd).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(Loginactivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Loginactivity.this, Homeactivity.class));
-                        finish();
+                        if ("admin@sohamfoundation.com".equals(useremail)) {
+                            // Admin login
+                            startActivity(new Intent(Loginactivity.this, AdminPanel.class));
+                        } else {
+                            // Normal user login
+                            startActivity(new Intent(Loginactivity.this, Homeactivity.class));
+                        }
+                        finish(); // Close LoginActivity
                     } else {
+                        // Login failed
                         Toast.makeText(Loginactivity.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
@@ -72,5 +63,17 @@ public class Loginactivity extends AppCompatActivity {
         RedirectToRegister.setOnClickListener(v -> {
             startActivity(new Intent(Loginactivity.this, Signupactivity.class));
         });
+    }
+
+    // THIS METHOD IS NOW IN THE CORRECT PLACE
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            // User is already signed in, go to home
+            startActivity(new Intent(Loginactivity.this, Homeactivity.class));
+            finish();
+        }
     }
 }

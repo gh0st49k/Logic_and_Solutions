@@ -69,30 +69,28 @@ public class AdminDonationHistory extends AppCompatActivity {
                 donationList.clear();
                 TotalAmount = 0;
 
-                for (DataSnapshot userDonations : snapshot.getChildren()) {
-                    for (DataSnapshot donationSnapshot : userDonations.getChildren()) {
-                        String name = donationSnapshot.child("Name").getValue(String.class);
-                        String amountStr = String.valueOf(donationSnapshot.child("Amount").getValue());
-                        String date = donationSnapshot.child("Date").getValue(String.class);
+                // CORRECTED: Removed the extra outer loop
+                for (DataSnapshot donationSnapshot : snapshot.getChildren()) {
+                    String name = donationSnapshot.child("Name").getValue(String.class);
+                    String amountStr = String.valueOf(donationSnapshot.child("Amount").getValue());
+                    String date = donationSnapshot.child("Date").getValue(String.class);
 
-                        if (amountStr != null) {
-                            try {
-                                int amount = Integer.parseInt(amountStr);
-                                TotalAmount += amount;
+                    if (amountStr != null && !amountStr.equals("null")) {
+                        try {
+                            int amount = Integer.parseInt(amountStr);
+                            TotalAmount += amount;
 
-                                // Handle null name or date
-                                String nameStr = (name != null) ? "Name: " + name : "Name: Anonymous";
-                                String dateStr = (date != null) ? "Date: " + date : "Date: Unknown";
+                            String nameStr = (name != null) ? "Name: " + name : "Name: Anonymous";
+                            String dateStr = (date != null) ? "Date: " + date : "Date: Unknown";
 
-                                Map<String, String> donationMap = new HashMap<>();
-                                donationMap.put("Name", nameStr);
-                                donationMap.put("Amount", "Amount: ₹" + amount);
-                                donationMap.put("Date", dateStr);
+                            Map<String, String> donationMap = new HashMap<>();
+                            donationMap.put("Name", nameStr);
+                            donationMap.put("Amount", "Amount: ₹" + amount);
+                            donationMap.put("Date", dateStr);
+                            donationList.add(donationMap);
 
-                                donationList.add(donationMap);
-                            } catch (NumberFormatException e) {
-                                e.printStackTrace();
-                            }
+                        } catch (NumberFormatException e) {
+                            e.printStackTrace();
                         }
                     }
                 }
@@ -103,7 +101,7 @@ public class AdminDonationHistory extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getApplicationContext(), "Failed to load data", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Failed to load data: " + error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }}

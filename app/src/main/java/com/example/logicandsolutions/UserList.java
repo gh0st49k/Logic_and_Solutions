@@ -8,9 +8,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,7 +40,7 @@ public class UserList extends AppCompatActivity {
                 this,
                 userList,
                 R.layout.item_list,
-                new String[]{"name", "phone", "email"},
+                new String[]{"Name", "Phone", "Email"}, // Using capitalized keys
                 new int[]{R.id.nameText, R.id.phoneText, R.id.emailText}
         );
 
@@ -49,6 +49,15 @@ public class UserList extends AppCompatActivity {
     }
 
     private void fetchUsers() {
+        // --- THIS IS THE DEBUGGING CODE ---
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            Log.d("UID_CHECK", "Requesting data as user: " + currentUser.getUid());
+        } else {
+            Log.e("UID_CHECK", "Requesting data but NO USER is logged in!");
+        }
+        // --- END OF DEBUGGING CODE ---
+
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -60,9 +69,10 @@ public class UserList extends AppCompatActivity {
 
                     if (name != null && phone != null && email != null) {
                         Map<String, String> userMap = new HashMap<>();
-                        userMap.put("name", "Name: " + name);
-                        userMap.put("phone", "Phone: " + phone);
-                        userMap.put("email", "Email: " + email);
+                        // Using capitalized keys to match adapter
+                        userMap.put("Name", "Name: " + name);
+                        userMap.put("Phone", "Phone: " + phone);
+                        userMap.put("Email", "Email: " + email);
                         userList.add(userMap);
                     }
                 }

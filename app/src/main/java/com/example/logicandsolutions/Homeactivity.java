@@ -78,7 +78,7 @@ public class Homeactivity extends AppCompatActivity {
 
         // Set navigation click listeners
         donation.setOnClickListener(v -> {
-            startActivity(new Intent(Homeactivity.this, DonationBox.class));
+            startActivity(new Intent(Homeactivity.this, ContactusActivity.class));
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right); // ✅ Slide animation
         });
         developer.setOnClickListener(v -> {
@@ -111,7 +111,7 @@ public class Homeactivity extends AppCompatActivity {
             overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right); // ✅ Slide animation
         });
 
-        contactus.setOnClickListener(v -> navigateWithSlide(ContactusActivity.class));
+        contactus.setOnClickListener(v -> navigateWithSlide(DonationBox.class));
         aboutus.setOnClickListener(v -> navigateWithSlide(AboutUsActivity.class));
         help.setOnClickListener(v -> navigateWithSlide(HelpActivity.class));
         gallery.setOnClickListener(v -> navigateWithSlide(com.example.logicandsolutions.GalleryActivity.class));
