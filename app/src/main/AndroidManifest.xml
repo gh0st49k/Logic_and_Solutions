@@ -14,69 +14,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LogicAndSolutions"
         tools:targetApi="31">
-        <activity
-            android:name=".HelpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DeveloperInfo"
-            android:exported="false" />
-        <activity
-            android:name=".SocialMediaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".VolunteerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".GalleryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FeedbackActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AboutUsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminDonationHistory"
-            android:exported="false" />
-        <activity
-            android:name=".AdminMessages"
-            android:exported="false" />
-        <activity
-            android:name=".UserList"
-            android:exported="false" />
-        <activity
-            android:name=".DonationHistory"
-            android:exported="false" />
-        <activity
-            android:name=".DonationBox"
-            android:exported="false" />
-        <activity
-            android:name=".AdminPanel"
-            android:exported="true" /> <!-- Only this should be LAUNCHER -->
+
+        <!-- ✅ MainActivity as Splash / Launcher -->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.LogicAndSolutions"> <!-- or AppTheme.Splash -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- Other activities -->
-        <activity
-            android:name=".Loginactivity"
-            android:exported="false" />
-        <activity
-            android:name=".Signupactivity"
-            android:exported="false" />
-        <activity
-            android:name=".Homeactivity"
-            android:exported="false" />
-        <activity
-            android:name=".Profileactivity"
-            android:exported="false" />
-        <activity
-            android:name=".ContactusActivity"
-            android:exported="false" />
+        </activity>
+
+        <!-- 🔧 Other Activities -->
+        <activity android:name=".Loginactivity" android:exported="false" />
+        <activity android:name=".Signupactivity" android:exported="false" />
+        <activity android:name=".Homeactivity" android:exported="false" />
+        <activity android:name=".Profileactivity" android:exported="false" />
+        <activity android:name=".ContactusActivity" android:exported="false" />
+        <activity android:name=".AdminPanel" android:exported="true" />
+
+        <!-- Optional pages -->
+        <activity android:name=".HelpActivity" android:exported="false" />
+        <activity android:name=".DeveloperInfo" android:exported="false" />
+        <activity android:name=".SocialMediaActivity" android:exported="false" />
+        <activity android:name=".VolunteerActivity" android:exported="false" />
+        <activity android:name=".GalleryActivity" android:exported="false" />
+        <activity android:name=".FeedbackActivity" android:exported="false" />
+        <activity android:name=".AboutUsActivity" android:exported="false" />
+        <activity android:name=".AdminDonationHistory" android:exported="false" />
+        <activity android:name=".AdminMessages" android:exported="false" />
+        <activity android:name=".UserList" android:exported="false" />
+        <activity android:name=".DonationHistory" android:exported="false" />
+        <activity android:name=".DonationBox" android:exported="false" />
+
     </application>
 
 </manifest>

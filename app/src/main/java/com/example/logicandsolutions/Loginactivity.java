@@ -1,8 +1,8 @@
 package com.example.logicandsolutions;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Loginactivity extends AppCompatActivity {
+
     EditText email, password;
     Button loginBtn;
     TextView RedirectToRegister;
@@ -24,56 +25,70 @@ public class Loginactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginactivity);
 
-        // Initialization
+        // Initialize views
         email = findViewById(R.id.username);
         password = findViewById(R.id.passwordlogin);
         loginBtn = findViewById(R.id.button);
         RedirectToRegister = findViewById(R.id.Register);
         mauth = FirebaseAuth.getInstance();
 
-        // Login Button Click
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String useremail = email.getText().toString().trim();
-                String passwd = password.getText().toString().trim();
+        // 🔔 Check if admin was forced to re-login
+        if (getIntent().getBooleanExtra("admin_forced_login", false)) {
+            Toast.makeText(this, "Admin must log in again.", Toast.LENGTH_SHORT).show();
+        }
 
-                // Validation... (Your validation code is fine)
+        loginBtn.setOnClickListener(v -> {
+            String useremail = email.getText().toString().trim();
+            String passwd = password.getText().toString().trim();
 
-                // Firebase login
-                mauth.signInWithEmailAndPassword(useremail, passwd).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        if ("admin@sohamfoundation.com".equals(useremail)) {
-                            // Admin login
-                            startActivity(new Intent(Loginactivity.this, AdminPanel.class));
-                        } else {
-                            // Normal user login
-                            startActivity(new Intent(Loginactivity.this, Homeactivity.class));
-                        }
-                        finish(); // Close LoginActivity
-                    } else {
-                        // Login failed
-                        Toast.makeText(Loginactivity.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
+            if (useremail.isEmpty() || passwd.isEmpty()) {
+                Toast.makeText(Loginactivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            mauth.signInWithEmailAndPassword(useremail, passwd).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    // 🧠 Save session info for non-admins
+                    SharedPreferences prefs = getSharedPreferences("UserSession", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    editor.putString("email", useremail);
+                    editor.apply();
+
+                    if ("admin@sohamfoundation.com".equals(useremail)) {
+                        startActivity(new Intent(Loginactivity.this, AdminPanel.class));
+                    } else {
+                        startActivity(new Intent(Loginactivity.this, Homeactivity.class));
+                    }
+                    finish();
+                } else {
+                    Toast.makeText(Loginactivity.this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
         });
 
-        // Redirect to register
-        RedirectToRegister.setOnClickListener(v -> {
-            startActivity(new Intent(Loginactivity.this, Signupactivity.class));
-        });
+        // 👉 Redirect to sign-up
+        RedirectToRegister.setOnClickListener(v -> startActivity(new Intent(Loginactivity.this, Signupactivity.class)));
     }
 
-    // THIS METHOD IS NOW IN THE CORRECT PLACE
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        FirebaseUser currentUser = mauth.getCurrentUser();
+
         if (currentUser != null) {
-            // User is already signed in, go to home
-            startActivity(new Intent(Loginactivity.this, Homeactivity.class));
-            finish();
+            String userEmail = currentUser.getEmail();
+
+            if ("admin@sohamfoundation.com".equals(userEmail)) {
+                // 🔐 Admin must always log in again manually
+                Toast.makeText(this, "Admin access requires login", Toast.LENGTH_SHORT).show();
+                mauth.signOut(); // Clear Firebase session
+                // Don't navigate — stay on login screen
+            } else {
+                // 🚀 Auto-login regular user
+                startActivity(new Intent(Loginactivity.this, Homeactivity.class));
+                finish();
+            }
         }
     }
 }

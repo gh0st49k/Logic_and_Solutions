@@ -1,18 +1,13 @@
 package com.example.logicandsolutions;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -26,31 +21,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         welcomelogo = findViewById(R.id.welcomelogo);
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.fadein_anim);
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.fadein_anim);
         welcomelogo.startAnimation(animation);
+
         mauth = FirebaseAuth.getInstance();
-
     }
-    protected void onStart(){
+
+    @Override
+    protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser =  mauth.getCurrentUser();
-        if(currentUser!=null){
-            new Handler().postDelayed(() -> {
-                Intent intent = new Intent(MainActivity.this, Homeactivity.class);
-                startActivity(intent);
-                finish();
-            }, 3000); //
 
-        }else{
+        FirebaseUser currentUser = mauth.getCurrentUser();
 
-            new Handler().postDelayed(() -> {
-                Intent intent = new Intent(MainActivity.this, Loginactivity.class);
-                startActivity(intent);
-                finish();
-            }, 3000); //
-        }
-
+        new Handler().postDelayed(() -> {
+            if (currentUser == null) {
+                // No user logged in → go to Login
+                startActivity(new Intent(MainActivity.this, Loginactivity.class));
+            } else {
+                String email = currentUser.getEmail();
+                if ("admin@sohamfoundation.com".equals(email)) {
+                    // Admin must re-login
+                    mauth.signOut();
+                    startActivity(new Intent(MainActivity.this, Loginactivity.class));
+                } else {
+                    // Regular user → go to Home
+                    startActivity(new Intent(MainActivity.this, Homeactivity.class));
+                }
+            }
+            finish(); // Close splash/Main screen
+        }, 3000); // Delay to show animation
     }
 }
