@@ -1,5 +1,4 @@
 plugins {
-
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
 }
@@ -33,23 +32,24 @@ android {
     }
 }
 
-
 dependencies {
-
-    implementation("com.razorpay:checkout:1.6.40")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    
+    // Firebase
+    implementation("com.google.firebase:firebase-auth:22.1.1")
+    implementation("com.google.firebase:firebase-database:20.3.0")
+    
+    // RecyclerView and CardView
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.cardview:cardview:1.0.0")
+    
+    // Material Design
+    implementation("com.google.android.material:material:1.10.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
-
-    implementation("com.google.firebase:firebase-storage:20.3.0")
-
-    implementation("com.google.firebase:firebase-auth:22.1.1")
-    implementation("com.google.firebase:firebase-database:20.3.0")
 }
-
